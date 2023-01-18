@@ -3,7 +3,7 @@ version: '3.8'
 services:
   database:
     container_name: cilist-db
-    image: rafly21/cilist-db:1.0
+    image: ramses01/cilist-database:latest
     environment:
       - MYSQL_ROOT_PASSWORD=people
       - MYSQL_DATABASE=people
@@ -17,7 +17,7 @@ services:
       - db_data:/var/lib/mysql
   
   backend:
-    image: rafly21/be-cilist:test
+    image: ramses01/cilist-backend-dev:latest
     ports:
       - 5000:5000
     depends_on:
@@ -34,7 +34,7 @@ services:
       - shared-network
 
   frontend:
-    image: rafly21/fe-cilist:test
+    image: ramses01/cilist-frontend-dev:latest
     ports:
       - 3000:3000
     depends_on:
