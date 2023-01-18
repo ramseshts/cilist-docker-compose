@@ -10,7 +10,7 @@ services:
       - MYSQL_USER=people
       - MYSQL_PASSWORD=people
     ports:
-      - 3304:3306
+      - 3306:3306
     networks:
       - shared-network
     volumes:
